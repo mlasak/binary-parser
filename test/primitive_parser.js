@@ -208,6 +208,20 @@ describe("Primitive parser", function() {
         e: 1
       });
     });
+    it("should parse 6-byte-length bit field sequence", function() {
+      var parser = new Parser()
+        .bit33("a")
+        .bit3("b")
+        .bit7("c")
+        .bit5("d");
+      var buf = binaryLiteral("101111111111111101111111111111101 111 0111110 11110");
+      assert.deepEqual(parser.parse(buf), {
+        a: 6442385405,
+        b: 7,
+        c: 62,
+        d: 30
+      });
+    });
     it("should parse nested bit fields", function() {
       var parser = new Parser().bit1("a").nest("x", {
         type: new Parser()

@@ -12,7 +12,7 @@ time and effort to write). Supported data types are:
 
 - Integers (supports 8, 16, 32 bit signed- and unsigned integers)
 - Floating point numbers (supports 32 and 64 bit floating point values)
-- Bit fields (supports bit fields with length from 1 to 32 bits)
+- Bit fields (supports bit fields with length from 1 to 48 bits)
 - Strings (supports various encodings, fixed-length and variable-length, zero
   terminated string)
 - Arrays (supports user-defined element type, fixed-length and variable-length)
@@ -102,10 +102,10 @@ var parser = new Parser()
   .int16be("c");
 ```
 
-### bit\[1-32\](name[, options])
-Parse bytes as a bit field and store it in variable `name`. There are 32
-methods from `bit1` to `bit32` each corresponding to 1-bit-length to
-32-bits-length bit field.
+### bit\[1-48\](name[, options])
+Parse bytes as a bit field and store it in variable `name`. There are 48
+methods from `bit1` to `bit48` each corresponding to 1-bit-length to
+48-bits-length bit field.
 
 ### {float, double}{le, be}(name[, options])
 Parse bytes as an floating-point value and store it in a variable named
